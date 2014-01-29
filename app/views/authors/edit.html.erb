@@ -2,5 +2,16 @@
 
 <%= render 'form' %>
 
+<%= form_tag(controller: "authors", action: "add_book", method: "post") do %>
+<% @books.each do |book| %>
+<%= check_box_tag(@books.where("id = ?", book.id)) %>
+<%= label_tag(@books.where("id = ?", book.id), book.title) %>
+<% end %> 
+<%= submit_tag("Add Books to Author") %>
+<% end %>
+
+<br /><br />
 <%= link_to 'Show', @author %> |
 <%= link_to 'Back', authors_path %>
+
+

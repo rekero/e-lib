@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   http_basic_authenticate_with name: "admin", password: "password", except: [:index, :show]
-  # scope :find_by_title, ->(ftitle) { where('title = ?', ftitle) }
   # GET /books
   # GET /books.json
   def index
@@ -27,20 +26,8 @@ class BooksController < ApplicationController
   end
 	
   def searcht # search books by title
-#	params[:title] = :title
-#	@book = Book.new
-#	@books = Book.where("title = ?", params[:title])
-#	respond_to do |format|
- #     unless @books.size.zero?
-  #      format.html { redirect_to books_path, notice: 'NOT FOUND' }
-   #     format.json { render action: 'show', status: :created, location: @book }
-    #  else
-     #   format.html { render action: 'results' }
-      #  format.json { render json: @book.errors, status: :unprocessable_entity }
-      #end
-    #end
   end
-
+  
   # POST /books
   # POST /books.json
   def create

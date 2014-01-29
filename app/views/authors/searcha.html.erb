@@ -1,0 +1,11 @@
+<h1>New book</h1>
+
+<%= form_tag(controller: "authors", action: "results", method: "get") do %>
+ <%= label_tag(:name, "Search for:") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+ 
+ 
+<%= link_to 'Back', books_path %>

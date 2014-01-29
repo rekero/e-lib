@@ -3,13 +3,20 @@ Elib::Application.routes.draw do
   resources :books do
 	collection do 
 	get 'searcht' 
-	end
-	collection do 
-	post 'results' 
+	post 'results'
 	end
   end
 
-  resources :authors
+  resources :authors  do
+#	member do
+#		post 'add_book'
+#	end
+	collection do
+	post 'add_book'	
+	get 'searcha'
+	post 'results'
+	end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

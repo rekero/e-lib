@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Elib::Application.config.secret_key_base = '53a9c2f59de89a425ad74a7a7a7e16c26dfb4ec509646aaa5375d32604c2a6e6d7730d85e5c8eaa2cb8713fe4112b0f6ff82d41f1f307144a89a6953b7f5c077'
+Elib::Application.config.secret_key_base = 'e6b401346aae833e1bf43c0627db76188eab0fc8bc1205d7780a0936478c35a7b0ada1a1c263368c2d0b5c53cf74cd0d2423758b96430ddaefbfe3fd022b5af8'

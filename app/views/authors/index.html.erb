@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Name</th>
       <th></th>
       <th></th>
@@ -14,7 +13,6 @@
   <tbody>
     <% @authors.each do |author| %>
       <tr>
-        <td><%= author.id %></td>
         <td><%= author.name %></td>
         <td><%= link_to 'Show', author %></td>
         <td><%= link_to 'Edit', edit_author_path(author) %></td>

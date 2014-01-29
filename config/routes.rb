@@ -1,6 +1,13 @@
 Elib::Application.routes.draw do
   get "welcome/index"
-  resources :books
+  resources :books do
+	collection do 
+	get 'searcht' 
+	end
+	collection do 
+	post 'results' 
+	end
+  end
 
   resources :authors
 

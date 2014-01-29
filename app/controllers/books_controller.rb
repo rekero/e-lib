@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   http_basic_authenticate_with name: "admin", password: "password", except: [:index, :show]
-
+  scope :find_by_title, ->(ftitle) { where('title = ?', ftitle) }
   # GET /books
   # GET /books.json
   def index
@@ -20,6 +20,11 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+  end
+  
+  def search_books_by_title
+	
+	
   end
 
   # POST /books

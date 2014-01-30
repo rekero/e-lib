@@ -21,7 +21,6 @@ class AuthorsController < ApplicationController
   def edit
   @books = Book.all
   @authorbooks = @author.books
-  @assignments = Assignment.all
   end
   
   def add_book

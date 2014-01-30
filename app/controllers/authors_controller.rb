@@ -20,40 +20,19 @@ class AuthorsController < ApplicationController
   # GET /authors/1/edit
   def edit
   @books = Book.all
+  @authorbooks = @author.books
+  @assignments = Assignment.all
   end
   
   def add_book
- # Book.all.each do |book|
- # if book.id = 
- # @books = Book.Where[book.id]
-#	@author.books = @books
+	@newbooks = Book.find_all_by_id(params[:active])
+	@author = Author.find_or_initialize_by(id: params[:authorid])
+	@author.books = @newbooks
+	@books = @newbooks
   end
   
   def results  
-  #@authors = Author.find_by name: params[:name] 
-  @au = Author.where("name = ?", params[:name])
-  @count = 0
-  @author = Author.all.first
- # @author = @au.first
-  Author.all.each do |a|
-	if a == @au
-		@count = a.id
-		@author = a
-	end
-	end
- # @author = Author.first.id
- # @au = @authors.id
- # @aut = Author.find_by_name(params[:name]).id
- # @author = @authors.id
- # @assignments = Assignment.all.find_by_author_id(@count)
- # Assignment.all.each do |ass|
- # if ass.author_id == count
-#	@books =+ Book.where("id = ?", ass.book_id)
-#	end
-#	end
-  
- # @author = Author.find(params[:@authors.first.id])
- # @books = Book.joins(:assignment).where('assignments.author_id.name = ?', params[:name])
+  @author = Author.find_or_initialize_by(name: params[:name])
   @books = @author.books
   end
   

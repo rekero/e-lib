@@ -3,10 +3,15 @@
 <%= render 'form' %>
 
 <%= form_tag(controller: "authors", action: "add_book", method: "post") do %>
-<% @books.each do |book| %>
-<%= check_box_tag(@books.where("id = ?", book.id)) %>
-<%= label_tag(@books.where("id = ?", book.id), book.title) %>
-<% end %> 
+	<% @books.each do |book| %>
+		<% count = false%>
+		<% @authorbooks.each do |authbooks| %>
+			<% count ||= ( book.id == authbooks.id) %>
+		<% end %>
+	<div><%= check_box_tag("active[]", book.id, count) %>
+	<%= label_tag("active[]", book.title) %></div>
+	<% end %>  
+	<%= hidden_field_tag(:authorid, @author.id) %>
 <%= submit_tag("Add Books to Author") %>
 <% end %>
 
